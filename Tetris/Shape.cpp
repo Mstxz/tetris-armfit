@@ -1,5 +1,4 @@
 #include "Shape.hpp"
-#include <cstring>
 
 Shape::Shape(): posX(3), posY(0)
 {
@@ -35,19 +34,19 @@ void	Shape::setY(int y)
 	this->posY = y;
 }
 
-void Shape::moveLeft(bool (*board)[8])
+void Shape::moveRight(bool (*board)[8])
 {
 	if (!checkCollision(board, posX - 1, posY, bitmap))
 	{
-		posX--; // move left
+		posX--; // move right
 	}
 }
 
-void Shape::moveRight(bool (*board)[8])
+void Shape::moveLeft(bool (*board)[8])
 {
 	if (!checkCollision(board, posX + 1, posY, bitmap))
 	{
-		posX++; // move right
+		posX++; // move left
 	}
 }
 

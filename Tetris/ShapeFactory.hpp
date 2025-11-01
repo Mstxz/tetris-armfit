@@ -6,7 +6,11 @@
 
 # include <Arduino.h>
 # include "Shape.hpp"
-# include "ShapeI.hpp"
+#include "ShapeI.hpp"
+#include "ShapeJ.hpp"
+#include "ShapeL.hpp"
+#include "ShapeO.hpp"
+#include "ShapeT.hpp"
 
 class ShapeFactory
 {
