@@ -18,7 +18,7 @@ void setup()
 		digitalWrite(LED_BUILTIN, LOW);
 		delay(50);
 	}
-	Serial.begin(9600);
+	Serial.begin(115200);
 	Serial.println("begin test");
 	delay(500);
 	mpu.begin();
@@ -31,13 +31,13 @@ void setup()
 
 void loop()
 {	
-	if (millis() - timer > 200)
+	if (millis() - timer > 0)
 	{
 		sensors_event_t a, g, temp;
 		mpu.getEvent(&a, &g, &temp);
-		Serial.print("Accel X: "); Serial.print(a.acceleration.x);
-		Serial.print(", Y: "); Serial.print(a.acceleration.y);
-		Serial.print(", Z: "); Serial.println(a.acceleration.z);
+		Serial.print("Accel X: "); Serial.print(a.acceleration.x); // + = up
+		Serial.print(", Y: "); Serial.print(a.acceleration.y); //focus this (-) = left (+) = right
+		Serial.print(", Z: "); Serial.println(a.acceleration.z); 
 	
 		Serial.print("Gyro X: "); Serial.print(g.gyro.x);
 		Serial.print(", Y: "); Serial.print(g.gyro.y);
