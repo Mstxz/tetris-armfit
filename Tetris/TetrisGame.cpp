@@ -13,7 +13,7 @@ TetrisGame::TetrisGame()
 {
 	std::memset(board, 0, sizeof(board));
 	curShape = nullptr;
-	moveSpeed = 200;
+	moveSpeed = POLLING_RATE;
 	lastUpdate = millis();
 	ShapeFactory::init();
 	restartGame();
@@ -23,6 +23,11 @@ TetrisGame::~TetrisGame()
 {
 	if (curShape)
 		delete curShape;
+}
+
+unsigned long	TetrisGame::getShapeSpawnTime()
+{
+	return (curShape->spawnTime);
 }
 
 // Restart the game
@@ -143,7 +148,7 @@ void TetrisGame::clearFullLines() {
 		
 	// Adjust speed based on lines cleared
 	if (linesCleared > 0) {
-		moveSpeed = max(50, moveSpeed - linesCleared * 25);
+		moveSpeed = max(50, moveSpeed - linesCleared * 10);
 	}
 }
 

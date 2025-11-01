@@ -7,6 +7,10 @@
 # include "Shape.hpp"
 # include <string>
 
+# define INPUT_DELAY 100
+# define POLLING_DELAY 1
+# define POLLING_RATE 1000 / POLLING_DELAY
+
 # define MAX_Y 32
 # define MAX_X 8
 
@@ -35,13 +39,15 @@ class TetrisGame
 		TetrisGame();
 		~TetrisGame();
 
-		int		KeyEvent(t_event event);
-		void	updateGame();
-		void	restartGame();
-		void	clearFullLines();
+		int				KeyEvent(t_event event);
+		void			updateGame();
+		void			restartGame();
+		void			clearFullLines();
 
-		void	render();
-		void	display(bool (*board)[8]);
+		unsigned long	getShapeSpawnTime();
+
+		void			render();
+		void			display(bool (*board)[8]);
 
 };
 

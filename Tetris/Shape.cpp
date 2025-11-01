@@ -3,6 +3,7 @@
 Shape::Shape(): posX(3), posY(0)
 {
 	std::memset(this->bitmap, 0, sizeof(this->bitmap));
+	this->spawnTime = millis();
 }
 
 Shape::~Shape(){}

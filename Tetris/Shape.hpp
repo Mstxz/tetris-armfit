@@ -1,6 +1,7 @@
 #ifndef SHAPE_HPP
 # define SHAPE_HPP
 
+# include <Arduino.h>
 # include <cstring>
 
 class Shape
@@ -8,6 +9,7 @@ class Shape
 
 	public:
 
+		unsigned long	spawnTime;
 		bool			bitmap[4][4]; // bitmap[y][x]
 		int				posX;
 		int				posY;
