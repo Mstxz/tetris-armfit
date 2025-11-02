@@ -2,7 +2,7 @@
 # define SHAPE_HPP
 
 # include <Arduino.h>
-# include <cstring>
+# include <string.h>
 
 class Shape
 {

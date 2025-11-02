@@ -2,16 +2,16 @@
 #include "Shape.hpp"
 #include "ShapeFactory.hpp"
 #include <LedControl.h>
-#include <cstring>
-#include <string>
-#include <cstdlib>
-#include <ctime>
+// #include <cstring>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
 
 extern LedControl lc;
 
 TetrisGame::TetrisGame()
 {
-	std::memset(board, 0, sizeof(board));
+	memset(board, 0, sizeof(board));
 	curShape = nullptr;
 	moveSpeed = POLLING_RATE;
 	lastUpdate = millis();
@@ -33,7 +33,7 @@ unsigned long	TetrisGame::getShapeSpawnTime()
 // Restart the game
 void TetrisGame::restartGame()
 {
-	std::memset(board, 0, sizeof(board));
+	memset(board, 0, sizeof(board));
 
 	if (curShape)
 	{
@@ -156,7 +156,7 @@ void TetrisGame::render()
 {
 	// Make a temporary copy of the board
 	bool tempBoard[32][8];
-	std::memcpy(tempBoard, board, sizeof(board));
+	memcpy(tempBoard, board, sizeof(board));
 
 	// Draw current falling shape on top
 	if (curShape)

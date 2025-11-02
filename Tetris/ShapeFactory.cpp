@@ -2,12 +2,12 @@
 
 void	ShapeFactory::init()
 {
-	std::srand(random());
+	srand(random());
 }
 
 Shape	*ShapeFactory::createShape()
 {
-	int r = std::rand() % 5;
+	int r = rand() % 5;
 	switch (r)
 	{
 		case 0: return (new ShapeI());

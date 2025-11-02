@@ -5,7 +5,7 @@
 // # include <LedControl.h>
 # include "ShapeFactory.hpp"
 # include "Shape.hpp"
-# include <string>
+# include <string.h>
 
 # define INPUT_DELAY 100
 # define POLLING_DELAY 1

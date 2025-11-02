@@ -2,7 +2,7 @@
 
 Shape::Shape(): posX(3), posY(0)
 {
-	std::memset(this->bitmap, 0, sizeof(this->bitmap));
+	memset(this->bitmap, 0, sizeof(this->bitmap));
 	this->spawnTime = millis();
 }
 
@@ -12,7 +12,7 @@ void	Shape::getMap(bool *buf)
 {
 	if (!buf)
 		return ;
-	std::memcpy(buf, bitmap, sizeof(bitmap));
+	memcpy(buf, bitmap, sizeof(bitmap));
 }
 
 int	Shape::getX()

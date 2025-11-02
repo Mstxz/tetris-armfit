@@ -17,7 +17,7 @@ void	ShapeO::rotateRight() {}
 Shape	*ShapeO::clone()
 {
 	ShapeO *newShape = new ShapeO();
-	std::memcpy(newShape->bitmap, bitmap, sizeof(bitmap));
+	memcpy(newShape->bitmap, bitmap, sizeof(bitmap));
 	newShape->posX = posX;
 	newShape->posY = posY;
 	return newShape;
