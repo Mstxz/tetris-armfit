@@ -10,16 +10,17 @@ board_list := ${shell arduino-cli board list}
 # To get information of the board. Please running arduino-cli board list
 # And make sure you board is securely connect
 #
-FQBN_BOARD = arduino:renesas_uno:unor4wifi # TODO: Enter the FQBN of the board
+# FQBN_BOARD = arduino:renesas_uno:unor4wifi # TODO: Enter the FQBN of the board
+FQBN_BOARD = arduino:avr:uno # TODO: Enter the FQBN of the board
 PORT = /dev/ttyACM0 # TODO: Enter the port that's connect to the board
-SERIAL = 9600
+SERIAL = 115200
 
 #
 # TODO: always run with sketch name specify in variable
 # example:
 # >~ make NAME=${YOUR_SKETCH_NAME}
 #
-NAME :=
+NAME := #Tetris
 
 COMPILE_FLAGS = -b
 
